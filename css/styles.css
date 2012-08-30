@@ -1,0 +1,307 @@
+@charset "utf-8";
+
+/*--------------------------------------------------------------------------------------------------
+CSS Styles for <Preventing VTE>.
+
+version:   1.0
+--------------------------------------------------------------------------------------------------*/
+
+/* =CSS Reset
+--------------------------------------------------------------------------------------------------*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* End CSS Reset
+--------------------------------------------------------------------------------------------------*/
+
+/* =Toolkit
+--------------------------------------------------------------------------------------------------*/
+
+/* Micro Clearfix Hack by Nicholas Gallagher (http://nicolasgallagher.com/micro-clearfix-hack/) */
+/* For modern browsers */ 
+.cf:before, .cf:after { content:""; display:table; }
+.cf:after { clear:both; }
+/* For IE 6/7 (trigger hasLayout) */
+.cf { zoom:1; }
+
+/* general purpose classes */
+.nodisplay { display:none; }
+.nodisplay_strict { display:none !important; }
+.alignleft { float:left; }
+.alignright { float:right; }
+
+/* End Toolkit
+--------------------------------------------------------------------------------------------------*/
+
+/* =Normalization - mostly derived from normalize.css (https://github.com/necolas/normalize.css/) but without comments and compressed to keep the file small
+--------------------------------------------------------------------------------------------------*/
+
+hr { display:block; height:1px; border:0; margin:1em 0; padding:0;
+	border-top:1px solid #cccccc; /* change border colour to suit your needs */
+}
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+html { overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body, button, input, select, textarea { font-family: sans-serif; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+h1 { font-size: 2em; }
+h1, h2, h3, h4, h5, h6, p, pre, blockquote, form, fieldset, table, ul { margin: 0 0; }
+del { text-decoration: line-through; }
+abbr[title] { border-bottom: 1px dotted; cursor:help; }
+b, strong { font-weight: bold; }
+dfn { font-style: italic; }
+mark { background: #ff0; color: #000; }
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+small { font-size: 75%; }
+sub,sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+img { border: 0; -ms-interpolation-mode: bicubic; }
+svg:not(:root) { overflow: hidden; }
+fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
+legend { border: 0; *margin-left: -7px; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: normal; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+input, select { vertical-align:middle; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; }
+
+/* End Normalization
+--------------------------------------------------------------------------------------------------*/
+
+/* =Typography
+--------------------------------------------------------------------------------------------------*/
+
+/* Setting up the fonts */
+body {
+	font-family: 'helveticaneuelight';
+	height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'helveticaneuelight';
+    src: url('../fonts/helveticaneue_light-webfont.eot');
+    src: url('../fonts/helveticaneue_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/helveticaneue_light-webfont.woff') format('woff'),
+         url('../fonts/helveticaneue_light-webfont.ttf') format('truetype'),
+         url('../fonts/helveticaneue_light-webfont.svg#helveticaneuelight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* End Typography
+--------------------------------------------------------------------------------------------------*/
+
+#wrapper {
+	border-top:3px solid #ff5959;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -39px;
+}
+
+/* =Header
+--------------------------------------------------------------------------------------------------*/
+#header{
+	width:940px;
+	margin:38px auto 43px;
+}
+	#header h1{
+		color:#ff5959;
+		font-size:48px;
+		line-height:48px;
+		.line-height:55px;
+		text-align:center;
+		font-weight:normal;
+	}
+/* End Header
+--------------------------------------------------------------------------------------------------*/
+
+/* =Main Content
+--------------------------------------------------------------------------------------------------*/
+#content{
+	background:url(../img/bgi/bgContent.jpg) repeat-x;
+	border-top:1px solid #d0d0d0;
+	border-bottom:1px solid #d0d0d0;
+	position:relative;
+}
+	.leftImg{
+		left: 0;
+	    position: absolute;
+	    top: 208px;
+	}
+	.hoverImg{
+		left: 0;
+	    position: absolute;
+	    top: 189px;
+	    width: 200px;
+	    display:none;
+	}
+	.hover{
+		display:block;
+	}
+	.mainContent{
+		margin: 0 auto;
+	    position: relative;
+	    width: 940px;
+	    z-index: 10;
+	}
+		.mainContent .iphone{
+			padding:54px 0;
+			float:left;
+			width:437px;
+			z-index:10;
+			position:relative;
+		}
+			.mainContent .iphone img{
+				float:right;
+			}
+		.mainContent .iphoneLeft{
+			position:absolute;
+			left:-5px;
+			top:54px;
+			z-index:1;
+		}
+		.contentText{
+			float:left;
+			padding: 62px 0 0 44px;
+		    width: 377px;	
+		}
+			.contentText h2{
+				font-size:32px;
+				line-height:44px;
+				color:#ff5959;
+				font-style:italic;
+				font-weight:normal;
+			}
+			.contentText h2.get{
+				font-size: 37px;
+			    font-style: normal;
+			    line-height: 37px;
+			    padding-bottom: 35px;
+			}
+			.contentText p{
+				color:#545454;
+				font-size:21px;
+				line-height: 29px;
+				font-weight:normal;
+				padding:8px 0 36px
+			}
+			.contentText a.appStore{
+				background:url(../img/bgi/appStore.png) no-repeat;
+				float:left;
+				display:block;
+				height: 58px;
+			    width: 172px;
+			    overflow:hidden;
+			    text-indent:-9999px;
+			}
+			.contentText a.googlePLay{
+				background:url(../img/bgi/googlePLay.png) no-repeat;
+				float:left;
+				display:block;
+				height: 58px;
+			    width: 172px;
+			    margin-left: 17px;
+			    overflow:hidden;
+			    text-indent:-9999px;
+			}
+/* =End Main Content
+--------------------------------------------------------------------------------------------------*/
+
+/* =Footer
+--------------------------------------------------------------------------------------------------*/
+.push{
+	height:39px;
+}
+#footer{
+	height: 20px;
+    padding-top: 19px;
+}
+	.footerContent{
+		width:940px;
+		margin:0 auto;
+	}
+		.footerContent p{
+			color:#777777;
+			font-size:17px;
+			text-align: center;
+			margin:0;
+		}
+/* End Footer
+--------------------------------------------------------------------------------------------------*/
+
+/* =Additional 1
+--------------------------------------------------------------------------------------------------*/
+a{
+	text-decoration:none;
+}
+/* End Additional 1
+--------------------------------------------------------------------------------------------------*/
+
+/* =Clearing floats
+ --------------------------------------------------------------------------------------------------------*/
+.mainContent:after
+{
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0; 
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+ }
+/* ie7 only */
+.mainContent
+{
+	zoom: 1;
+}
+/* End Clearing floats
+ --------------------------------------------------------------------------------------------------------*/
